@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Card</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <div class="card" id="card" tabindex="0" aria-label="Greeting card, hover or tap to open">
+        <div class="imgBox">
+            <div class="bark"></div>
+            <img class="cover" src="./cover.jpg" alt="Quilled flower greeting card">
+        </div>
+
+        <div class="details">
+            <div class="inner">
+                <h4 class="color1">A Thought</h4>
+                <p class="quote">The Saddest part<br>is trusting someone<br>who never valued<br>your loyalty</p>
+                <p class="mark">&#10048;</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // tap to open/close on touch devices
+        const card = document.getElementById('card');
+        card.addEventListener('click', () => card.classList.toggle('open'));
+    </script>
+</body>
+</html>

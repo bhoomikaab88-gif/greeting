@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+    font-family: 'Indie Flower', cursive !important;
+    background: #f3e3e8;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+::selection {
+    background: transparent;
+}
+
+/* ---------- petal background ---------- */
+.petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.petals span {
+    position: absolute;
+    border-radius: 60% 40% 60% 40%;
+}
+
+/* ---------- card ---------- */
+h4 {
+    font-size: 30px;
+    line-height: 1;
+    margin: 0 0 14px;
+    font-family: 'Amatic SC', cursive !important;
+}
+
+.color1 {
+    color: #a23836;
+}
+
+.card {
+    color: #013243;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 340px;
+    background: #f7efe2;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) perspective(2000px);
+    box-shadow:
+        inset 300px 0 50px rgba(0, 0, 0, 0.5),
+        20px 0 60px rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.card:hover,
+.card.open {
+    transform:
+        translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+    box-shadow:
+        inset 20px 0 50px rgba(0, 0, 0, 0.5),
+        0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #d9a6a0;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 5px;
+    height: 100%;
+    background: #8e2f2e;
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+
+.card .imgBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: left;
+    transition: 0.7s;
+}
+
+.card .bark {
+    position: absolute;
+    background: #a23836;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.card .cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .imgBox,
+.card.open .imgBox {
+    transform: rotateY(-135deg);
+}
+
+.card:hover .bark,
+.card.open .bark {
+    opacity: 1;
+    transition: 0.6s;
+    box-shadow: 300px 200px 100px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* ---------- inside page ---------- */
+.card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card .details .quote {
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0;
+    transform: rotate(-4deg);
+}
+
+.card .details .mark {
+    font-size: 28px;
+    color: #d81f3f;
+    margin: 18px 0 0;
+}
