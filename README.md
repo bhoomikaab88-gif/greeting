@@ -25,7 +25,7 @@ greeting-card/
 
 1. Clone the repository:
    ```bash
-   
+   https://github.com/bhoomikaab88-gif/greeting.git
    ```
 2. Open the folder and double-click `index.html` in any modern browser.
 
